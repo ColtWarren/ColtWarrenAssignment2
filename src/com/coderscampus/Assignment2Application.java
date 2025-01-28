@@ -9,7 +9,7 @@ public class Assignment2Application {
 		
 		// Colt's Assignment2
 		int maxAttempts = 5;
-		int attempt = 0;
+		int attempts = 0;
 		
 		Random random = new Random(); 
 		int theRandomNumber = random.nextInt(100) + 1; 
@@ -17,19 +17,19 @@ public class Assignment2Application {
 		
 		System.out.println("Pick a number between 1 and 100!");  
 		
-		while (attempt < maxAttempts) {
+		while (attempts < maxAttempts) {
 			int userInput = scanner.nextInt();
-			attempt++;
-	        
 			
 	        if (userInput < 1 || userInput > 100) {
 		       System.out.println("Your guess is not between 1 and 100, please try again!");	    
 		       continue;
-	        }  
+	        }   
+	        
+	        attempts++;
 	        
 	        if (userInput == theRandomNumber) {
  		       System.out.println("You win!");
- 		       break;
+ 		       
 	        } 
 	        
 	        else if (userInput < theRandomNumber) {
@@ -38,15 +38,16 @@ public class Assignment2Application {
 	        
 	        else if (userInput > theRandomNumber) {
  		       System.out.println("Please pick a lower number!");
- 	        } 
-	        
-	        if (attempt == maxAttempts) {  
+
+ 	        }  
+	       
+	        if (attempts == maxAttempts) {  
 	 	           System.out.println("You lose! The number to guess was: " + theRandomNumber);
+	 	         
 	 	    }
-		 
+	        
 		}
-		
-		
+	
 		scanner.close(); 
       
 	}
