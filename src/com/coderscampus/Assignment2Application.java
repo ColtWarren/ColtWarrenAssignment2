@@ -22,28 +22,26 @@ public class Assignment2Application {
 			
 	        if (userInput < 1 || userInput > 100) {
 		       System.out.println("Your guess is not between 1 and 100, please try again!");	    
-		       continue;
+		       continue;	       
 	        }   
 	        
 	        attempts++;
 	        
 	        if (userInput == theRandomNumber) {
- 		       System.out.println("You win!");
- 		       
+ 		       System.out.println("You win!");	
+ 		       break;
 	        } 
 	        
 	        else if (userInput < theRandomNumber) {
- 	           System.out.println("Please pick a higher number!");
+ 	           System.out.println("Please pick a higher number!");           
  	        } 
 	        
 	        else if (userInput > theRandomNumber) {
  		       System.out.println("Please pick a lower number!");
-
  	        }  
 	       
 	        if (attempts == maxAttempts) {  
-	 	           System.out.println("You lose! The number to guess was: " + theRandomNumber);
-	 	         
+	 	           System.out.println("You lose! The number to guess was: " + theRandomNumber);	 	         
 	 	    }
 	        
 		}
